@@ -1,0 +1,120 @@
+.analysis-viewer {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.analysis-viewer h1 {
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.component-section {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.component-section h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.component-demos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.component-demo {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #eee;
+  margin-bottom: 20px;
+}
+
+.component-object {
+  max-height: 75px;
+  max-width: 280px;
+}
+
+.component-demo h3 {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.component-demo p {
+  margin: 5px 0;
+  color: #333;
+  font-size: 0.9em;
+} 
+
+.element-card h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.element-count {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.styles-grid {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  min-height: 350px;
+}
+
+.style-property {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  font-size: 0.85em;
+}
+
+.property-name {
+  color: #000;
+  font-weight: 500;
+}
+
+.property-value {
+  color: #000;
+  font-family: monospace;
+}
+
+/* Component-specific styles */
+button {
+  margin: 10px 0;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+input {
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modal-preview {
+  margin: 10px 0;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.modal-content {
+  padding: 10px;
+}
+
+nav {
+  margin: 10px 0;
+}
