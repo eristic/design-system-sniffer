@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './AnalysisViewer.css';
 
 interface ComputedStyle {
@@ -24,6 +24,21 @@ interface AnalysisViewerProps {
 }
 
 const AnalysisViewer: React.FC<AnalysisViewerProps> = ({ analysisData }) => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const formatStyleValue = (value: string) => {
     if (!value || value === 'none' || value === '0px') return null;
     return value;
@@ -370,8 +385,21 @@ const AnalysisViewer: React.FC<AnalysisViewerProps> = ({ analysisData }) => {
   return (
     <div className="analysis-viewer">
       <h1>Design System Sniffer</h1>
+      
+      <nav className="component-navigation">
+        {analysisData.components.map((component) => (
+          <a 
+            key={component.name}
+            href={`#${component.name.toLowerCase()}`}
+            className="nav-link"
+          >
+            {component.name}
+          </a>
+        ))}
+      </nav>
+      
       {analysisData.components.map((component) => (
-        <div key={component.name} className="component-section">
+        <div key={component.name} id={component.name.toLowerCase()} className="component-section">
           <h2>{component.name}</h2>
           <h3 className="total-unique">Total Unique Elements: {component.elements.length}</h3>
           <div className="component-demos">
@@ -379,6 +407,16 @@ const AnalysisViewer: React.FC<AnalysisViewerProps> = ({ analysisData }) => {
           </div>
         </div>
       ))}
+
+      {showScrollTop && (
+        <button 
+          onClick={scrollToTop}
+          className="scroll-to-top"
+          aria-label="Return to top"
+        >
+          ↑
+        </button>
+      )}
     </div>
   );
 };
