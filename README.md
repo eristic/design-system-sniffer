@@ -6,9 +6,9 @@ React based style sniffer. MVP used for demo at [RenderATL 2025](https://www.ren
 
 In the project directory, run:
 
-### `npm analyze {website_url}`
+### `npm run analyze {website_url}`
 
-website_url should be formatted http://example.com
+website_url should be formatted https://example.com
 
 **Note: this scrapes a website's styles with puppeteer. Will timeout if website disallows scrapping or if request exceeds a minute**
 
