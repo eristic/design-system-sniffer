@@ -14,7 +14,7 @@ website_url should be formatted https://example.com
 
 After analysis is complete, open local React app by running:
 
-### `npm start`
+### `npm run dev`
 
 This runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
