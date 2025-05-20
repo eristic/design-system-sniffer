@@ -309,7 +309,7 @@ const AnalysisViewer = ({ analysisData }: AnalysisViewerProps) => {
             href={`#${component.name.toLowerCase()}`}
             className="nav-link"
           >
-            {component.name}
+            {component.name}: {component.elements.length} variants
           </a>
         ))}
       </nav>
