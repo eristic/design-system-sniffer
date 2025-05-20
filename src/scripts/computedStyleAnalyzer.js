@@ -2,12 +2,15 @@ import puppeteer from "puppeteer";
 
 // Helper function to compare two style objects
 function areStylesEqual(styles1, styles2) {
-  const keys1 = Object.keys(styles1);
-  const keys2 = Object.keys(styles2);
+  const relevantProperties = [
+    "color",
+    "background-color",
+    "font-family",
+    "font-size",
+    "border-radius",
+  ];
 
-  if (keys1.length !== keys2.length) return false;
-
-  return keys1.every((key) => styles1[key] === styles2[key]);
+  return relevantProperties.every((prop) => styles1[prop] === styles2[prop]);
 }
 
 export async function analyzeComputedStyles(url, components) {
@@ -85,10 +88,6 @@ export async function analyzeComputedStyles(url, components) {
                   "display",
                   "width",
                   "height",
-                  "min-width",
-                  "min-height",
-                  "max-width",
-                  "max-height",
                 ];
 
                 for (const prop of properties) {
