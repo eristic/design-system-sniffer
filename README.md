@@ -1,6 +1,6 @@
 # Design System Sniffer
 
-Node based design anaylzer.
+Node based design system anaylzer.
 
 ### To get started
 
