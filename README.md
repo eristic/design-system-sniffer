@@ -1,6 +1,6 @@
 # Design System Sniffer
 
-Node based design anaylzer. MVP used for demo at [RenderATL 2025](https://www.renderatl.com/)
+Node based design anaylzer.
 
 ### To get started
 
