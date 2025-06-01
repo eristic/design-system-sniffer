@@ -24,7 +24,10 @@ export async function analyzeComputedStyles(url, components) {
     const page = await browser.newPage();
 
     // Set a longer timeout for navigation
-    page.setDefaultNavigationTimeout(60000);
+    page.setDefaultNavigationTimeout(120000);
+
+    // Set a longer timeout for waiting for selectors
+    page.setDefaultTimeout(30000);
 
     // Set a user agent to avoid being blocked
     await page.setUserAgent(
@@ -36,12 +39,12 @@ export async function analyzeComputedStyles(url, components) {
 
     // Navigate to the page and wait for it to be fully loaded
     await page.goto(url, {
-      waitUntil: ["networkidle0", "domcontentloaded", "load"],
-      timeout: 60000,
+      waitUntil: ["domcontentloaded", "load"],
+      timeout: 120000,
     });
 
     // Wait for any dynamic content to load
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 5000));
 
     console.log("🔍 Analyzing components...");
 
@@ -74,11 +77,13 @@ export async function analyzeComputedStyles(url, components) {
                 const properties = [
                   "color",
                   "background-color",
+                  "background",
                   "font-family",
                   "font-size",
                   "font-weight",
                   "line-height",
                   "text-transform",
+                  "text-align",
                   "letter-spacing",
                   "padding",
                   "margin",
