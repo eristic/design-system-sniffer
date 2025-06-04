@@ -84,7 +84,7 @@ const AnalysisViewer = ({ analysisData }: AnalysisViewerProps) => {
               <h3>Button Variant {index + 1}</h3>
               <p>Selector: {element.selector}</p>
               <button style={styles} className="button-demo component-object">
-                {element.selector.includes("button") ? "Button" : "Click Me"}
+                {"Button"}
               </button>
               {renderStylesGrid(element.styles)}
             </div>

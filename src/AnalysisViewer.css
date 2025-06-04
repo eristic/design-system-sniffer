@@ -77,7 +77,7 @@
   display: flex;
   justify-content: space-between;
   margin: 5px 0;
-  font-size: 1em;
+  font-size: 16px;
 }
 
 .property-name {

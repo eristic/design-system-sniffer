@@ -17,8 +17,6 @@ const components = [
     selectors: [
       "button",
       '[role="button"]',
-      ".btn",
-      ".button",
       '[class*="button"]',
       '[class*="btn"]',
     ],
@@ -35,21 +33,11 @@ const components = [
   },
   {
     name: "Card",
-    selectors: [
-      ".card",
-      '[class*="card"]',
-      '[role="article"]',
-      '[class*="tile"]',
-    ],
+    selectors: ['[class*="card"]', '[role="article"]', '[class*="tile"]'],
   },
   {
     name: "Modal",
-    selectors: [
-      ".modal",
-      '[class*="modal"]',
-      '[role="dialog"]',
-      '[class*="dialog"]',
-    ],
+    selectors: ['[class*="modal"]', '[role="dialog"]', '[class*="dialog"]'],
   },
   {
     name: "Navigation",
@@ -75,18 +63,6 @@ const components = [
   {
     name: "Radio",
     selectors: ['input[type="radio"]', '[class*="radio"]'],
-  },
-  {
-    name: "Switch",
-    selectors: ['[class*="switch"]'],
-  },
-  {
-    name: "Slider",
-    selectors: ['input[type="range"]', '[class*="slider"]'],
-  },
-  {
-    name: "Progress",
-    selectors: ["progress", '[class*="progress"]'],
   },
   {
     name: "Tooltip",
